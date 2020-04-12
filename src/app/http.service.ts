@@ -51,5 +51,15 @@ export class AccessHttpService {
         )
     }
 
+    upload(formData) {
+        return this.http.post(baseUrl + 'upload',
+            formData,
+            { observe: 'response', reportProgress: true },
+        )
 
-} 
+
+    }
+}
+
+
+

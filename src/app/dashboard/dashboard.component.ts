@@ -2,6 +2,7 @@ import { Post } from './../post.model';
 import { AccessHttpService } from './../http.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
 
 
 
@@ -15,7 +16,7 @@ export class DashboardComponent implements OnInit {
   faceData: string = null;
   analyseData: string = null;
 
-  constructor(private http: HttpClient, private accessHttp: AccessHttpService) { }
+  constructor(private http: HttpClient, private accessHttp: AccessHttpService, private router: Router) { }
 
   ngOnInit(): void { }
 
@@ -49,6 +50,11 @@ export class DashboardComponent implements OnInit {
       console.log(event)
 
     )
+  }
+
+  onCapture() {
+
+    this.router.navigate(['/capture'])
   }
 
 }
